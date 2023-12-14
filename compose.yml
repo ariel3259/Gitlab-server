@@ -4,10 +4,10 @@ services:
   server:
     container_name: 'server'
     image: gitlab/gitlab-ce:16.4.3-ce.0
-    hostname: "$GITLAB_URL"
+    hostname: "$GITLAB_HOST"
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url: $GITLAB_URL
+        external_url 'http://$GITLAB_HOST'
       GITLAB_ROOT_PASSWORD: '$GITLAB_ROOT_PASSWORD'
     ports:
       - '8080:80'
