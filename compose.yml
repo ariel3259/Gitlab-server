@@ -1,18 +1,18 @@
-name: 'gitlab-offline'
+version: '3'
+
 services:
   server:
     container_name: 'server'
     image: gitlab/gitlab-ce:16.4.3-ce.0
-    #hostname: "gitlab.mycomputer.com"
-    hostname: "localhost"
+    hostname: "$GITLAB_URL"
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.mycomputer.com'
-      GITLAB_ROOT_PASSWORD: 15541231554
+        external_url: $GITLAB_URL
+      GITLAB_ROOT_PASSWORD: '$GITLAB_HOME_PASSWORD'
     ports:
-      - '80:80'
-      - '443:443'
-      - '22:22'
+      - '8080:80'
+      - '8443:443'
+      - '8022:22'
     volumes:
       - '$GITLAB_HOME/config:/etc/gitlab'
       - '$GITLAB_HOME/logs:/var/log/gitlab'
