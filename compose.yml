@@ -10,9 +10,9 @@ services:
         external_url 'http://$GITLAB_HOST'
       GITLAB_ROOT_PASSWORD: '$GITLAB_ROOT_PASSWORD'
     ports:
-      - '8080:80'
-      - '8443:443'
-      - '8022:22'
+      - '80:80'
+      - '443:443'
+      - '22:22'
     volumes:
       - '$GITLAB_HOME/config:/etc/gitlab'
       - '$GITLAB_HOME/logs:/var/log/gitlab'
