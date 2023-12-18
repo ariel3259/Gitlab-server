@@ -8,7 +8,7 @@ services:
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://localhost'
-      GITLAB_ROOT_PASSWORD: '$GITLAB_ROOT_PASSWORD'
+      GITLAB_ROOT_PASSWORD: 'homerodonuts1632'
     ports:
       - '80:80'
       - '443:443'
